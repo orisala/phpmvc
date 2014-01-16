@@ -1,0 +1,117 @@
+<?php include("header.inc.php");
+
+if (isset(Framework::$get_vars["sport"])) {
+    $sport = Framework::$get_vars["sport"];
+}
+else {
+    $sport = "sport";
+}
+
+$this->model->setSport($sport);
+$image = $this->model->getImage();
+
+/*
+var_dump(Framework::$get_vars);
+var_dump(Framework::$post_vars);
+*/
+?>
+
+<body>
+  <?php  include("cap.inc.php");?>
+  <div id="imagetop">
+        <img src="App/View/Templates/img/<?php echo $image?>"/>
+        <h1 class="header_banner"><?php echo $this->model->getSport($sport)?></h1>
+  </div>
+
+  <div class="row_tip">
+      <div class="row_tip_center">
+          <p class="wear_tip">Your step-by-step guide to wearing Trusox products</p>
+      </div>
+
+  </div>
+
+
+<div class="row_content">
+    <div class="row_content_center">
+        <div class="row1">
+            <h2><?php echo $this->model->getContent1_title()?></h2>
+            <?php echo $this->model->getContent1_text()?>
+
+            <hr class="buttonSeparator" />
+            <a href="#" class="buttonSport buttonSport1">PRODUCT<br/>RANGE</a>
+            <a href="#" class="buttonSport buttonSport1">HOW TO WEAR TRUSOX</a>
+        </div>
+        <img src="App/View/Templates/img/<?php echo $this->model->getContent1_image()?>" class="sportImage1" />
+    </div>
+
+</div>
+
+  <div class="row_content">
+
+
+      <div class="row_content_center">
+          <div class="content3cols_box">
+              <p class="box_title2">Mid Half Sock</p>
+              <img src="App/View/Templates/img/wear_box.jpg" />
+              <p class="box_text2"><?php echo $this->model->getBox1_text()?></p>
+          </div>
+          <div class="content3cols_box">
+              <p class="box_title2">Mid Half Sock</p>
+              <img src="App/View/Templates/img/box2.jpg" />
+              <p class="box_text2"><?php echo $this->model->getBox2_text()?></p>
+          </div>
+          <div class="content3cols_box_last">
+              <p class="box_title2">Mid Half Sock</p>
+              <img src="App/View/Templates/img/box3.jpg" />
+              <p class="box_text2"><?php echo $this->model->getBox3_text()?></p>
+          </div>
+      </div>
+
+
+  <div class="row_content">
+          <div class="row_content_center">
+              <h2 class="titleContent"><?php echo $this->model->getContent2_title()?></h2>
+              <img src="App/View/Templates/img/<?php echo $this->model->getContent2_image()?>" class="sportImage2" />
+              <div class="row2">
+
+                  <?php echo $this->model->getContent2_text()?>
+              </div>
+
+          </div>
+
+  </div>
+
+  <?php include("footer.inc.php");?>
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+  <!-- scripts concatenated and minified via build script -->
+  <script src="App/View/Templates/js/plugins.js"></script>
+  <script src="App/View/Templates/js/script.js"></script>
+  <script src="App/View/Templates/js/libs/jquery.masonry.min.js"></script>
+  <script>
+  	$(function(){
+  		$('#container').masonry({
+    // options
+    itemSelector : '.item'
+    
+  	});
+  });
+  </script>
+  <!-- end scripts -->
+
+  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippet -->
+  <script>
+    var _gaq=[['_setAccount','UA-22756494-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+</body>
+</html>

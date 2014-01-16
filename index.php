@@ -53,20 +53,13 @@ if (isset($model)) {
     <![endif]-->
   </head>
   <body>
-    <div class="page-header">
-      <h1>MVC: <?php echo $title?></h1>
-    </div>
+    <h1>MVC: <?php echo $title?></h1>
     
-    <ul class="nav nav-pills">
-      <li><a href="index.php">Index</a></li>
-      <li><a href="index.php?page=about">About</a></li>
-      <li><a href="index.php?page=portfolio">Portfolio</a></li>
-    </ul>
+    <p><a href="index.php">Index</a></p>
+    <p><a href="index.php?page=about">About</a></p>
+    <p><a href="index.php?page=portfolio">Portfolio</a></p>
 
-
-    <div class="well well-large">
     <?php echo $content?>
-    </div>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
